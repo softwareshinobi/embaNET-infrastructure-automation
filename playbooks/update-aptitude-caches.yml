@@ -1,0 +1,16 @@
+---
+ - hosts: all
+   tasks:
+
+      -  name: Run the equivalent of "apt-get update" as a separate step
+         apt:
+            update_cache: yes
+
+      -  name: Remove useless packages from the cache
+         apt:
+         autoclean: yes
+
+      -  name: Remove dependencies that are no longer required
+         apt:
+         autoremove: yes
+
