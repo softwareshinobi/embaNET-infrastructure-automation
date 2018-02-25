@@ -1,0 +1,42 @@
+---
+ - hosts: web-servers
+   tasks:
+      -  name: remove and purge node.js packages
+         apt:
+            name: nodejs
+            state: absent
+            purge: true
+
+      -  name: remove and purge legacy node.js packages
+         apt:
+            name: nodejs-legacy
+            state: absent
+            purge: true
+
+      -  name: remove and purge npm packages
+         apt:
+            name: npm
+            state: absent
+            purge: true
+
+      -  name: install node.js packages
+         apt:
+            name: nodejs
+            state: present
+
+      -  name: install legacy node.js packages
+         apt:
+            name: nodejs-legacy
+            state: present
+
+      -  name: install npm packages
+         apt:
+            name: npm
+            state: present
+
+      -  name: install "pm2" via npm
+         npm:
+            name: pm2
+            global: yes
+            production: yes
+
