@@ -1,0 +1,14 @@
+---
+ - hosts: all
+   tasks:
+      -  name: Remove and purge java
+         apt:
+            name: openjdk-8-jre-headless
+            state: absent
+            purge: true
+
+      -  name: install java package
+         apt:
+            name: openjdk-8-jre-headless
+            state: present
+
