@@ -6,9 +6,12 @@ Provision scripts, playbooks, just all the stuff for managing embaNET using ansi
 
 ## install anbible on ubuntu
 
+```
 sudo apt update
 sudo apt install ansible
 sudo apt install sshpass
+ansible --version
+```
 
 ## run the ping cd
 
