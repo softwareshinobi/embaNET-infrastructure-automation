@@ -1,0 +1,12 @@
+---
+- hosts: aventador
+ # become: true
+  tasks:
+    - name: "Change directory and run bash script"
+      command: "cd /opt/embaNET/intranet && bash intranet.bash"
+      delegate_to: localhost
+    - name: "Wait for 60 seconds"
+      pause:
+        seconds: 60
+    - name: "List Docker containers"
+      command: "docker ps"

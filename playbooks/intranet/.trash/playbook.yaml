@@ -1,0 +1,9 @@
+---
+- hosts: aventador.embanet.softwareshinobi.digital
+  become: true  # I assume we're running commands as root, but adjust if you need to
+  tasks:
+    - name: Run docker ps on the server
+      command: docker ps
+      register: docker_output  # Capture the output for later use
+
+    - debug: var=docker_output.stdout # Let's see what's in that output

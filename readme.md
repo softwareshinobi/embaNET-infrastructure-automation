@@ -47,3 +47,14 @@ huracan.embanet.softwareshinobi.digital | SUCCESS => {
     "ping": "pong"
 }
 ```
+
+## Reference
+
+https://technotim.live/posts/ansible-automation/
+
+## todo
+
+[ ] gemini this up 
+
+[ ] make a video
+

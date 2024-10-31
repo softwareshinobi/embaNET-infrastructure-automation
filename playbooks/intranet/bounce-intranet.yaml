@@ -1,0 +1,15 @@
+---
+- name: Initial node setup
+  hosts: aventador
+  connection: local
+  gather_facts: yes
+
+  tasks:
+    - name: "Change directory and run bash script"
+      command: "/bin/bash /opt/embaNET/intranet/intranet.bash"
+##      delegate_to: localhost
+    - name: "Wait for 60 seconds"
+      pause:
+        seconds: 60
+    - name: "List Docker containers"
+      command: "docker ps"
